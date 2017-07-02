@@ -1,16 +1,29 @@
-<!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <title>Desafio iCasei</title>
     <meta charset="utf-8">
-    <title>Teste iCasei: Front-End Pleno</title>
-  </head>
-  <body>
-    <form id="search-film">
-      <input type="text" id="search-film-input" placeholder="Procure seu filme">
-      <button type="submit" id="search-film-submit">Pesquisar</button>
-    </form>
-    <div id="results"></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="application.js"></script>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="stylesheet" href="vendor/angular-material/angular-material.min.css">
+</head>
+
+<body ng-app="iCaseiDesafio">
+    
+
+    <section ui-view></section>
+
+    <!--vendor-->
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-animate/angular-animate.min.js"></script>
+    <script src="vendor/angular-aria/angular-aria.min.js"></script>
+    <script src="vendor/angular-material/angular-material.min.js"></script>
+    <script src="vendor/angular-messages/angular-messages.min.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+    
+    <!--app-->
+    <script src="app.js"></script>
+    <script src="src/js/main/controller/main.js"></script>
+    <script src="src/js/main/route.js"></script>
+
+</body>
 </html>
