@@ -14,10 +14,12 @@
         <div layout="row">
             <div ng-if="vm.videoResult.length > 0">
                 <div ng-repeat="video in vm.videoResult">
-                    <h1>{{video.snippet.title}}</h1>
+                    <a href="#" ng-click="vm.onShowInfo(video.id.videoId)">
+                        <h1 ng-bind="video.snippet.title"></h1>
+                    </a>
                     <p ng-bind="video.snippet.description"></p>
                 </div>
-                <md-button class="md-primary" ng-click="vm.onSearch()">Próxima Página</md-button>                
+                <md-button class="md-primary" ng-click="vm.onSearch()">Próxima Página</md-button>
             </div>
         </div>
 
