@@ -10,30 +10,25 @@
         var url_search = 'https://www.googleapis.com/youtube/v3/search';
         var KEY = 'AIzaSyBTo8mOJjxoqYSXEkdIZQdz07ldQndgKaA';
 
-        function buscar(conteudo) {
-
+        function search(conteudo, pageToken) {
+            
             var searchParams = {
                 part: 'id,snippet',
+                maxResults: 10,
                 q: conteudo,
-                key: KEY
+                key: KEY,
+                pageToken:pageToken
             };
 
-            $http({
+            return $http({
                 method: 'GET',
                 url: url_search,
                 params: searchParams
-            }).then(function (data) {
-                console.log('hashahs');
-                console.log(data);
-            }).then(function (erro) {
-                console.log('asdasdasd');
-                console.log(erro);
             });
-
-        }
+        }       
 
         var service = {
-            buscar: buscar
+            search: search
         };
 
         return service;

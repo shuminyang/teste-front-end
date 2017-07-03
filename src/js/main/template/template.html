@@ -1,14 +1,24 @@
 <div layout="row">
-    <md-content id="content" flex>
+    <md-content id="content" flex layout-padding>
 
         <div layout="row" layout-align="center center">
             <form name="userForm">
                 <md-input-container>
                     <label>Pesquisar</label>
-                    <input name="lastName" ng-model="vm.lastName" >
+                    <input name="lastName" ng-model="vm.lastName">
                 </md-input-container>
-                <md-button class="md-primary" ng-click="vm.onClick()">Pesquisar</md-button>
+                <md-button class="md-primary" ng-click="vm.onSearch()">Pesquisar</md-button>
             </form>
+        </div>
+
+        <div layout="row">
+            <div ng-if="vm.videoResult.length > 0">
+                <div ng-repeat="video in vm.videoResult">
+                    <h1>{{video.snippet.title}}</h1>
+                    <p ng-bind="video.snippet.description"></p>
+                </div>
+                <md-button class="md-primary" ng-click="vm.onSearch()">Próxima Página</md-button>                
+            </div>
         </div>
 
     </md-content>
