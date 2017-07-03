@@ -1,27 +1,51 @@
-<div layout="row">
-    <md-content id="content" flex layout-padding>
 
-        <div layout="row" layout-align="center center">
-            <form name="userForm">
-                <md-input-container>
-                    <label>Pesquisar</label>
-                    <input name="lastName" ng-model="vm.lastName">
-                </md-input-container>
-                <md-button class="md-primary" ng-click="vm.onSearch()">Pesquisar</md-button>
-            </form>
-        </div>
+<md-content flex layout-padding class="full-height">
 
-        <div layout="row">
-            <div ng-if="vm.videoResult.length > 0">
-                <div ng-repeat="video in vm.videoResult">
-                    <a href="#" ng-click="vm.onShowInfo(video.id.videoId)">
-                        <h1 ng-bind="video.snippet.title"></h1>
-                    </a>
-                    <p ng-bind="video.snippet.description"></p>
-                </div>
-                <md-button class="md-primary" ng-click="vm.onSearch()">Próxima Página</md-button>
+    <div layout="column" layout-align="center center" ng-class="vm.classHeight">
+        <form name="userForm">
+            <md-input-container>
+                <label>Pesquisar</label>
+                <input ng-model="vm.userInput" ng-change="vm.onInputChange()">
+            </md-input-container>
+            <md-button class="md-primary" ng-click="vm.onSearch()">Pesquisar</md-button>
+        </form>
+    </div>
+
+    <div ng-if="vm.videoResult.length > 0">
+        <div layout="column" >
+            <div ng-repeat="video in vm.videoResult" flex-xs layout="column">                    
+                <md-card md-theme="dark-grey" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline" ng-bind="video.snippet.title"></span>
+                            <span class="md-subhead" ng-bind="video.snippet.description"></span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-lg card-media">
+                                <img ng-src="{{video.snippet.thumbnails.default.url}}" alt="">
+                            </div>
+                        </md-card-title-media>
+                    </md-card-title>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button>Mais Informação</md-button>                        
+                    </md-card-actions>
+                </md-card>
             </div>
         </div>
+    </div>
 
-    </md-content>
-</div>
+    <!--<div layout="column">
+
+        <div ng-if="vm.videoResult.length > 0">
+            <div ng-repeat="video in vm.videoResult">
+                <a href="#" ng-click="vm.onShowInfo(video.id.videoId)">
+                    <h1 ng-bind="video.snippet.title"></h1>
+                </a>
+                <p ng-bind="video.snippet.description"></p>
+            </div>
+            <md-button class="md-primary" ng-click="vm.onSearch()">Próxima Página</md-button>
+        </div>
+    </div>-->
+
+</md-content>
+

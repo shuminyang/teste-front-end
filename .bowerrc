@@ -1,3 +1,4 @@
 {
-    "directory": "./vendor/"
+    "directory": "./vendor/",
+    "proxy":"http://10.51.164.252:3128/"
 }
