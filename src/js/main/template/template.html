@@ -11,22 +11,22 @@
     </div>
 
     <div ng-if="vm.videoResult.length > 0">
-        <div layout="column" >
-            <div ng-repeat="video in vm.videoResult" flex-xs layout="column">                    
-                <md-card>
+        <div layout="column">
+            <div ng-repeat="video in vm.videoResult" layout="column">
+                <md-card md-theme="dark-blue">
                     <md-card-title>
                         <md-card-title-text>
                             <span class="md-headline" ng-bind="video.snippet.title"></span>
                             <span class="md-subhead" ng-bind="video.snippet.description"></span>
                         </md-card-title-text>
                         <md-card-title-media>
-                            <div class="md-media-lg card-media">
+                            <div class="md-media-sm card-media">
                                 <img ng-src="{{video.snippet.thumbnails.default.url}}" alt="">
                             </div>
                         </md-card-title-media>
                     </md-card-title>
                     <md-card-actions layout="row" layout-align="end center">
-                        <md-button ng-click="vm.onShowInfo(video.id.videoId)">Mais Informação</md-button>                        
+                        <md-button ng-click="vm.onShowInfo(video.id.videoId)">Mais Informação</md-button>
                     </md-card-actions>
                 </md-card>
             </div>
@@ -35,4 +35,3 @@
     </div>
 
 </md-content>
-
