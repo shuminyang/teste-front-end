@@ -10,7 +10,10 @@
             url: '/videoDetail',
             templateUrl: 'src/js/videoDetail/template/template.html',
             controller: 'DetailController as vm',
-            params: { 'videoId': undefined }
+            params: {
+                'videoId': undefined,
+                'state': undefined
+            }
         });
 
         return $urlRouterProvider.otherwise('/');

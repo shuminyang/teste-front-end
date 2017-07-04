@@ -7,6 +7,9 @@
     function DetailController($stateParams, $state, YoutubeService) {
         var vm = this;
         var videoId = $stateParams.videoId;
+        var lastState = {
+            'lastState': $stateParams.state
+        };
 
         function load() {
             YoutubeService.searchDetail(videoId).then(function (data) {
@@ -15,6 +18,10 @@
                 vm.statistics = data.data.items[0].statistics;
             });
         }
+
+        vm.onReturn = function () {            
+            $state.go('main', lastState);
+        };
 
         function init() {
             load();

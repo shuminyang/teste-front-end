@@ -1,4 +1,3 @@
-
 <md-content flex layout-padding class="full-height">
 
     <div layout="column" layout-align="center center" ng-class="vm.classHeight">
@@ -14,7 +13,7 @@
     <div ng-if="vm.videoResult.length > 0">
         <div layout="column" >
             <div ng-repeat="video in vm.videoResult" flex-xs layout="column">                    
-                <md-card md-theme="dark-grey" md-theme-watch>
+                <md-card>
                     <md-card-title>
                         <md-card-title-text>
                             <span class="md-headline" ng-bind="video.snippet.title"></span>
@@ -27,25 +26,13 @@
                         </md-card-title-media>
                     </md-card-title>
                     <md-card-actions layout="row" layout-align="end center">
-                        <md-button>Mais Informação</md-button>                        
+                        <md-button ng-click="vm.onShowInfo(video.id.videoId)">Mais Informação</md-button>                        
                     </md-card-actions>
                 </md-card>
             </div>
-        </div>
-    </div>
-
-    <!--<div layout="column">
-
-        <div ng-if="vm.videoResult.length > 0">
-            <div ng-repeat="video in vm.videoResult">
-                <a href="#" ng-click="vm.onShowInfo(video.id.videoId)">
-                    <h1 ng-bind="video.snippet.title"></h1>
-                </a>
-                <p ng-bind="video.snippet.description"></p>
-            </div>
             <md-button class="md-primary" ng-click="vm.onSearch()">Próxima Página</md-button>
         </div>
-    </div>-->
+    </div>
 
 </md-content>
 

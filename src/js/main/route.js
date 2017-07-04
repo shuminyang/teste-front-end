@@ -9,7 +9,10 @@
         $stateProvider.state('main', {
             url: '/',
             templateUrl: 'src/js/main/template/template.html',
-            controller: 'MainController as vm'
+            controller: 'MainController as vm',
+            params: {
+                'lastState': undefined
+            }
         });
 
         return $urlRouterProvider.otherwise('/');

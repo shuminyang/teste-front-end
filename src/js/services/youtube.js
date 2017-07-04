@@ -15,7 +15,7 @@
 
             var searchParams = {
                 part: 'id,snippet',
-                maxResults: 10,
+                maxResults: 5,
                 q: conteudo,
                 key: KEY,
                 pageToken: pageToken,
