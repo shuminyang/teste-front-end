@@ -8,11 +8,11 @@
         var vm = this;
         var nextPageToken = '';
         vm.userInput = '';
-        vm.classHeight = 'full-height';        
+        vm.classHeight = 'full-height';
 
-        vm.onSearch = function () {            
+        vm.onSearch = function () {
             YoutubeService.search(vm.userInput, nextPageToken).then(function (data) {
-                if (data.status === 200) {                    
+                if (data.status === 200) {
                     vm.videoResult = data.data.items;
                     nextPageToken = data.data.nextPageToken;
                 } else {
@@ -23,7 +23,7 @@
 
         vm.onShowInfo = function (id) {
             var state = {};
-            var param = {};            
+            var param = {};
             state.nextPageToken = nextPageToken;
             state.userInput = vm.userInput;
             state.videoResult = vm.videoResult;
@@ -33,12 +33,14 @@
             $state.go('videoDetail', param)
         };
 
-        vm.onInputChange = function() {
+        vm.onInputChange = function () {
             if (vm.userInput != '') {
                 vm.classHeight = 'full-height-animate';
-            } else {
+            } else if (vm.videoResult.length == 0) {
                 vm.classHeight = 'full-height-animate-down';
             }
+
+
         };
 
         function checkState() {

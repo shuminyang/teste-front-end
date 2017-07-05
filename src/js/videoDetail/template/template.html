@@ -1,11 +1,28 @@
-<h1 ng-bind="vm.info.title"></h1>
+<md-grid-list ng-app="app" layout-fill flex md-cols-sm="1" md-cols-md="2" md-cols-gt-md="5" md-row-height-sm="100%" md-row-height="600px"
+    md-gutter="8px">
+    <md-card layout-padding>
+        <md-card-title>
+            <md-card-title-text>
+                <md-toolbar layout-align="center center">
+                    <h2>{{vm.info.title}}</h2>
+                </md-toolbar>
+            </md-card-title-text>            
+        </md-card-title>
+        <md-card-content>
+            <md-card-title-media>
+                <div class="md-media-lg card-media layout-align-center layout-row">
+                    <iframe ng-src="{{vm.makeVideoTrust(vm.video)}}">
+                    </iframe>
+                </div>
+            </md-card-title-media>
 
-<h3 ng-bind="vm.info.description"></h3>
-
-<h4 ng-bind="vm.statistics.viewCount"></h4>
-
-<video>
-    <source ng-src="http://www.youtube.com/watch?v= + {{vm.info.id}}">
-</video>
-
-<button ng-click="vm.onReturn()">Voltar</button>
+            <strong><h3>Descrição:</h3></strong>
+            <p>{{vm.info.description}}</p>
+            <div>
+            <strong><h3>Total de visualizações:</h3></strong><strong><p>{{vm.statistics.viewCount}}</p></strong></p>
+        </md-card-content>
+        <md-card-actions layout="row" class="layout-row">
+            <md-button class="md-raised md-primary" ng-click="vm.onReturn()">Voltar</md-button>
+        </md-card-actions>
+    </md-card>
+</md-grid-list>
