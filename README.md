@@ -1,7 +1,5 @@
 # Desafio iCasei front-end Developer
 
-O detalhes do desafio se encontram no branch Master.
-
 Foi inteiramente desenvolvido utilizando AngularJS e Angular Material Design. Para 'rodar' siga os passos seguintes:
 
 1. Certifique-se que tenha NPM instalado na sua máquina.
