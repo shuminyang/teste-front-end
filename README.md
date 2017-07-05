@@ -1,7 +1,7 @@
 # Teste iCasei: Front-End Pleno
 Desenvolver uma aplicação HTML5
 
-Observação: Solução do Teste está no Branch: Solução.
+**Observação: Solução do Teste está no Branch: Solução.**
 
 ## Instruções
 - Faça um fork desse projeto para a sua conta pessoal do GitHub, ou BitBucket.
