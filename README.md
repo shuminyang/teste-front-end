@@ -11,8 +11,6 @@ Foi inteiramente desenvolvido utilizando AngularJS e Angular Material Design. Pa
 # Teste iCasei: Front-End Pleno
 Desenvolver uma aplicação HTML5
 
-**Observação: Solução do Teste está no Branch: Solução.**
-
 ## Instruções
 - Faça um fork desse projeto para a sua conta pessoal do GitHub, ou BitBucket.
 - Siga as especificações abaixo.
