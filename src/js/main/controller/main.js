@@ -15,6 +15,7 @@
                 if (data.status === 200) {
                     vm.videoResult = data.data.items;
                     nextPageToken = data.data.nextPageToken;
+                    vm.classHeight = 'full-height-animate';
                 } else {
                     alert('Something went wrong! Youtube Service not working!\n' + data);
                 }
@@ -34,9 +35,9 @@
         };
 
         vm.onInputChange = function () {
-            if (vm.userInput != '') {
+            if (vm.userInput !== '') {
                 vm.classHeight = 'full-height-animate';
-            } else if (vm.videoResult.length == 0) {
+            } else if (vm.userInput === '' || vm.videoResult.length === 0) {
                 vm.classHeight = 'full-height-animate-down';
             }
 

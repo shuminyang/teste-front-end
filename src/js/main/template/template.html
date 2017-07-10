@@ -1,16 +1,16 @@
 <md-content flex layout-padding class="full-height">
 
-    <div layout="column" layout-align="center center" ng-class="vm.classHeight">
+    <div id='divPesquisa' layout="column" layout-align="center center" ng-class="vm.classHeight">
         <form name="userForm">
             <md-input-container>
                 <label>Pesquisar</label>
-                <input ng-model="vm.userInput" ng-change="vm.onInputChange()">
-                <md-button class=" md-raised md-primary" ng-click="vm.onSearch()">Pesquisar</md-button>
+                <input id="inputPesquisa" ng-model="vm.userInput" ng-change="vm.onInputChange()">
+                <md-button id="botaoPesquisa" class=" md-raised md-primary" ng-click="vm.onSearch()">Pesquisar</md-button>
             </md-input-container>            
         </form>
     </div>
 
-    <div ng-if="vm.videoResult.length > 0">
+    <div ng-if="vm.videoResult.length > 0" id="resultadoPesquisa">
         <div layout="column">
             <div ng-repeat="video in vm.videoResult" layout="column">
                 <md-card md-theme="dark-blue">
