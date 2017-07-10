@@ -8,6 +8,20 @@ Foi inteiramente desenvolvido utilizando AngularJS e Angular Material Design. Pa
 4. Após baixado dependências faça `http-server -p <port>`
 5. O servidor abrirá na porta `<port>` então para acessar: `http://localhost:<port>/`
 
+## Tests Automatizados
+
+Na parte dos testes foi utilizado o [Protractor](http://www.protractortest.org/#/). Como descrito no próprio site, deve-se seguir os seguintes passos:
+
+1. `npm install -g protractor`
+2. `webdrive-manager update`
+3. `webdrive-manager start`
+
+Vale a pena lembrar que será necessário permissão **SUDO** em alguns casos.
+
+4. Para rodar os tests faça `protractor teste-front-end/test/conf.js`
+
+Vale lembrar que o arquivo `conf.js` está apontando para **localhost:4444** que é o servidor default do Protractor, caso mude de port, por favor mude no `conf.js` também. Outro ponto importante é que os testes estão 'ouvindo' a porta 4051 de aplicação, caso seja possível por favor inicie a aplicação na porta 4051 (**http-server -p 4051**)
+
 # Teste iCasei: Front-End Pleno
 Desenvolver uma aplicação HTML5
 
